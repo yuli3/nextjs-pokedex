@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { GoogleAdSense } from "@/components/Adsense";
+import { Providers } from '@/app/provider';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,22 +19,28 @@ export async function generateMetadata() : Promise<Metadata> {
   return {
     title: {
       template: "%s",
-      default: "ahoxy.com",
+      default: "Pokédex - Gotta Catch Em All!",
     },
     description:
-      "Door to online tools, A collection of AI tools, content creation helpers, and games.",
+      "Explore the comprehensive Pokedex with detailed information about every Pokemon. Search, browse, and discover Pokemon stats, abilities, evolutions, and more!",
     keywords: [
-      "AI tools",
-      "online games",
-      "content creation",
-      "MBTI",
-      "balance games",
+      'pokemon', 'pokedex',
+      'Pokedex', 'Pokemon list', 'Pokemon database',
+      'Pokemon information',
+      'Pokemon encyclopedia',
+      'Pokemon guide',
+      'Pokemon search',
+      'Pokemon details',
+      'Pokemon evolution',
+      'Pokemon types',
+      'Pokemon abilities',
+      'Pokemon stats'
     ],
     authors: [{ name: "ahoxy" }],
     openGraph: {
-      title: "Door to online tools, A collection of AI tools, content creation helpers, and games.",
+      title: "Pokédex - Gotta Catch Em All!",
       description:
-        "Get personalized outfit recommendations for various social situations and cultural contexts.",
+        "Explore the comprehensive Pokedex with detailed information about every Pokemon. Search, browse, and discover Pokemon stats, abilities, evolutions, and more!",
       url: process.env.NEXT_PUBLIC_BASE_URL,
       siteName: "ahoxy",
       images: [
@@ -41,7 +48,7 @@ export async function generateMetadata() : Promise<Metadata> {
           url: process.env.NEXT_PUBLIC_BASE_URL + "/ms-icon-310x310.png",
           width: 1024,
           height: 1024,
-          alt: "ahoxy, door to online tools",
+          alt: "pokédex - Gotta Catch Em All!",
         },
       ],
       locale: "en_US",
@@ -49,9 +56,9 @@ export async function generateMetadata() : Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Door to Online Tools",
+      title: "Pokédex - Gotta Catch Em All!",
       description:
-        "Get personalized outfit recommendations for various social situations and cultural contexts.",
+        "Explore the comprehensive Pokedex with detailed information about every Pokemon. Search, browse, and discover Pokemon stats, abilities, evolutions, and more!",
       images: [process.env.NEXT_PUBLIC_BASE_URL + "/ms-icon-310x310.png"],
     },
     robots: "index, follow",
@@ -98,7 +105,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Providers>{children}</Providers>
         <GoogleAnalytics gaId="G-915L6V38X6" />
         <GoogleAdSense />
       </body>
