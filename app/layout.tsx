@@ -91,6 +91,7 @@ export async function generateMetadata() : Promise<Metadata> {
     other: {
       "msapplication-TileColor": "#ffffff",
       "msapplication-TileImage": "/ms-icon-144x144.png",
+      "naver-site-verification": "5559cc1a94ea3362b32eaa05b7e7f5a9f6c08796"
     },
   }
 };
